@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastro de Vendedores — Ipsy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Vendedores – Ipsy</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,77 +13,35 @@
       align-items: center;
       height: 100vh;
     }
-    form {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-    h2 {
+
+    .container {
       text-align: center;
+    }
+
+    h2 {
       color: #2a55e5;
     }
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #2a55e5;
+
+    a.botao {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #2a55e5;
       color: white;
-      border: none;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
       transition: 0.3s;
     }
-    button:hover {
-      background: #1d3dbf;
+
+    a.botao:hover {
+      background-color: #1d3dbf;
     }
   </style>
 </head>
 <body>
-  <form id="formulario">
-    <h2>Cadastre-se para vender com a Ipsy</h2>
-    <input type="text" name="nome" placeholder="Nome" required />
-    <input type="email" name="email" placeholder="E-mail" required />
-    <input type="text" name="website" placeholder="Website da loja" required />
-    <select name="categoria" required>
-      <option value="">Selecione uma categoria</option>
-      <option value="Moda">Moda</option>
-      <option value="Tecnologia">Tecnologia</option>
-      <option value="Beleza">Beleza</option>
-      <option value="Alimentos">Alimentos</option>
-      <option value="Outros">Outros</option>
-    </select>
-    <button type="submit">Quero me cadastrar</button>
-  </form>
-
-  <script>
-    const form = document.getElementById("formulario");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const dados = new FormData(form);
-      const json = {};
-      dados.forEach((value, key) => (json[key] = value));
-
-      fetch("", {", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(json),
-      });
-
-      form.reset();
-      alert("Cadastro enviado com sucesso!");
-    });
-  </script>
+  <div class="container">
+    <h2>Cadastre sua loja na Ipsy</h2>
+    <a class="botao" href=https://docs.google.com/forms/d/e/1FAIpQLSccTck-0tbQVIEqS4y5OpujMQgOXPWujVNDBHcIuZTAZgEGcg/viewform?usp=dialog " target="_blank">Abrir Formulário de Cadastro</a>
+  </div>
 </body>
 </html>
-     
-   
-    
