@@ -5,15 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ipsy - O futuro das vendas inteligentes</title>
-  <style>
-  body {
+  
+<style>
+  html, body {
+    height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
     color: #333;
+  }
+
+  body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
   }
 
   header {
@@ -23,9 +27,47 @@
     text-align: center;
   }
 
-  a:hover {
-    color: #4f46e5;
+  main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  section {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .btn:hover {
+    background-color: #3730a3;
     transform: scale(1.05);
+  }
+
+  footer {
+    background-color: #e5e7eb;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
   }
 </style>
     }
@@ -79,20 +121,23 @@
     <h1 style="font-size: 36px; margin: 0; color: #1a1a1a;">Ipsy</h1>
   </div>
   <nav style="display: flex; gap: 20px;">
-    <a href="index.html" style="text-decoration: none; color: #1a1a1a; font-size: 16px; font-weight: bold; transition: 0.3s;">Início</a>
-    <a href="sobre.html" style="text-decoration: none; color: #1a1a1a; font-size: 16px; font-weight: bold; transition: 0.3s;">Sobre</a>
-    <a href="planos.html" style="text-decoration: none; color: #1a1a1a; font-size: 16px; font-weight: bold; transition: 0.3s;">Planos</a>
-    <a href="parceiros.html" style="text-decoration: none; color: #1a1a1a; font-size: 16px; font-weight: bold; transition: 0.3s;">Parceiros</a>
-    <a href="contato.html" style="text-decoration: none; color: #1a1a1a; font-size: 16px; font-weight: bold; transition: 0.3s;">Contato</a>
+    <a href="index.html" class="btn">Início</a>
+    <a href="sobre.html" class="btn">Sobre</a>
+    <a href="planos.html" class="btn">Planos</a>
+    <a href="parceiros.html" class="btn">Parceiros</a>
+    <a href="contato.html" class="btn">Contato</a>
   </nav>
 </header>
 
   <main>
-  <p>
-      A Ipsy é um sistema operacional de vendas para empresas e vendedores.
-      Ajudamos você a vender mais usando inteligência artificial, dados, e automação.
+
+  <section style="text-align: center; padding: 40px 20px;">
+    <p style="font-size: 20px; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+      A Ipsy é um sistema operacional de vendas para empresas e vendedores.<br>
+      Ajudamos você a vender mais usando inteligência artificial, dados e automação.<br>
       Você vende, a gente cuida da sua tecnologia.
     </p>
+  </section>
     <br><br>
     <div style="display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px;">
      <a href="cadastro.html" class="btn">Quero vender com a Ipsy</a>
