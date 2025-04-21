@@ -1,111 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadastra-se para vender com a Ipsy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Vendedores — Ipsy</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f3f4f6;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-
-    .container {
-      max-width: 500px;
-      margin: 60px auto;
+    form {
+      background: white;
       padding: 40px;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
     }
-
-    h1 {
+    h2 {
       text-align: center;
-      color: #4f46e5;
-      margin-bottom: 30px;
+      color: #2a55e5;
     }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-
-    input, select {
+    input, select, button {
       width: 100%;
       padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 1em;
-      box-sizing: border-box;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
-
     button {
-      width: 100%;
-      background-color: #4f46e5;
+      background: #2a55e5;
       color: white;
-      padding: 14px;
       border: none;
-      border-radius: 8px;
-      font-size: 1em;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: 0.3s;
     }
-
     button:hover {
-      background-color: #3730a3;
-    }
-
-    footer {
-      margin-top: auto;
-      background-color: #e5e7eb;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #555;
+      background: #1d3dbf;
     }
   </style>
-<header style="padding: 20px;">
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <img src="logo_ipsy.png" alt="Logo da Ipsy" style="height: 80px;" />
-    <h1 style="margin: 0; font-size: 42px; color: #1a1a1a;">Ipsy</h1>
-  </div>
-</header>
+</head>
+<body>
+  <form id="formulario">
+    <h2>Cadastre-se para vender com a Ipsy</h2>
+    <input type="text" name="nome" placeholder="Nome" required />
+    <input type="email" name="email" placeholder="E-mail" required />
+    <input type="text" name="website" placeholder="Website da loja" required />
+    <select name="categoria" required>
+      <option value="">Selecione uma categoria</option>
+      <option value="Moda">Moda</option>
+      <option value="Tecnologia">Tecnologia</option>
+      <option value="Beleza">Beleza</option>
+      <option value="Alimentos">Alimentos</option>
+      <option value="Outros">Outros</option>
+    </select>
+    <button type="submit">Quero me cadastrar</button>
+  </form>
 
-  <div class="container">
-    <h1>Cadastra-se para vender com a Ipsy</h1>
-    <form>
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" required />
+  <script>
+    const form = document.getElementById("formulario");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const dados = new FormData(form);
+      const json = {};
+      dados.forEach((value, key) => (json[key] = value));
 
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required />
+      fetch("https://script.google.com/macros/s/AKfycbz7e_Em8uDw0Y7PNXQE2PxMpU1quiAvFdeva1bcq1l1LW0d92NdzCduzg0H9Ou9Y9Sw/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(json),
+      });
 
-      <label for="website">Website da loja</label>
-      <input type="url" id="website" name="website" />
-
-      <label for="categoria">Categoria de produtos</label>
-      <select id="categoria" name="categoria" required>
-        <option value="">Selecione uma categoria</option>
-        <option value="moda">Moda</option>
-        <option value="tecnologia">Tecnologia</option>
-        <option value="beleza">Beleza</option>
-        <option value="alimentos">Alimentos</option>
-        <option value="outros">Outros</option>
-      </select>
-
-      <button type="submit">Quero me cadastrar</button>
-    </form>
-  </div>
-
-  <footer>
-    A Ipsy respeita sua privacidade. Seus dados são protegidos.
-  </footer>
+      form.reset();
+      alert("Cadastro enviado com sucesso!");
+    });
+  </script>
 </body>
 </html>
+     
+   
+    
