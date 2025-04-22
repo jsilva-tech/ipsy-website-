@@ -1,47 +1,82 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Vendedores – Ipsy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Vendedores - Ipsy</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
+      margin: 0;
     }
 
-    .container {
-      text-align: center;
+    h1 {
+      color: #3b3bff;
     }
 
-    h2 {
-      color: #2a55e5;
-    }
-
-    a.botao {
-      display: inline-block;
-      padding: 15px 30px;
-      background-color: #2a55e5;
-      color: white;
-      text-decoration: none;
+    form {
+      background-color: white;
+      padding: 30px;
       border-radius: 8px;
-      font-size: 16px;
-      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
     }
 
-    a.botao:hover {
-      background-color: #1d3dbf;
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #3b3bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0000cc;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Cadastre sua loja na Ipsy</h2>
-    <a class="botao" href=https://docs.google.com/forms/d/e/1FAIpQLSccTck-0tbQVIEqS4y5OpujMQgOXPWujVNDBHcIuZTAZgEGcg/viewform?usp=dialog " target="_blank">Abrir Formulário de Cadastro</a>
-  </div>
+
+  <h1>Cadastre-se para vender com a Ipsy</h1>
+
+  <form onsubmit="enviarCadastro(event)">
+    <input type="text" placeholder="Nome" required>
+    <input type="email" placeholder="E-mail" required>
+    <input type="url" placeholder="Website da loja" required>
+    <select required>
+      <option value="">Categoria de produtos</option>
+      <option>Moda</option>
+      <option>Tecnologia</option>
+      <option>Beleza</option>
+      <option>Alimentos</option>
+      <option>Outros</option>
+    </select>
+    <button type="submit">Quero me cadastrar</button>
+  </form>
+
+  <script>
+    function enviarCadastro(event) {
+      event.preventDefault();
+      alert("Cadastro enviado com sucesso!");
+    }
+  </script>
+
 </body>
-</html>
+</html>    
